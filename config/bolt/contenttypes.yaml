@@ -1,0 +1,68 @@
+# This file defines the content types on the website. See the documentation for
+# details: https://docs.bolt.cm/contenttypes/intro
+
+housing:
+    name: Housings
+    singular_name: Housing
+    fields:
+        reference:
+            type: text
+            class: large
+            required: true
+        name:
+            type: text
+            class: large
+            required: true
+        rooms:
+            type: number
+            required: true
+        sittingRooms:
+            type: number
+            required: true
+        kitchens:
+            type: number
+            required: true
+        balconies:
+            type: number
+            required: true
+        bathrooms:
+            type: number
+            required: true
+        image:
+            type: image
+            required: true
+        gallery:
+            type: imagelist
+            required: true
+        locations:
+            type: select
+            values: ["Plaza Diamant Kipé", "Plaza Platinium"]
+            multiple: true
+            required: true
+        type:
+            type: select
+            values:
+                [
+                    "Appartement",
+                    "Locaux de commerces",
+                    "Logement Sociaux",
+                    "Villa",
+                ]
+            required: true
+        serviceTypes:
+            type: select
+            values: ["Location", "Vente"]
+            multiple: true
+            required: true
+        description:
+            type: textarea
+            height: 300px
+            required: true
+        slug:
+            type: slug
+            uses: title
+            readonly: true
+            hidden: true
+    locales: ['fr']
+    icon_many: "fa:hotel"
+    icon_one: "fa:hotel"
